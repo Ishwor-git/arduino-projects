@@ -13,11 +13,13 @@ void setup() {
 
 void loop() {
   int ldrData = analogRead(ldrPin);
+  /*
   Serial.println("");
   Serial.print("Light Sensor ");
   Serial.print(" Value = ");
   Serial.print(ldrData);
 //  delay(1000);
+*/
   if (ldrData <= 10) {
     digitalWrite(ledPinGreen,HIGH);
     digitalWrite(ledPinBlue,LOW);
