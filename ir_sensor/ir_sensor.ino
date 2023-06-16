@@ -1,13 +1,9 @@
 const int irPin = A0;
-const int ledPinGreen = 10;
-const int ledPinBlue = 8;
-const int ledPinRed = 9;
+const int buzzPin = 11;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(ledPinGreen,OUTPUT);
-  pinMode(ledPinBlue,OUTPUT);
-  pinMode(ledPinRed,OUTPUT);
+  pinMode(buzzPin,OUTPUT);
 }
 
 void loop() {
@@ -17,5 +13,12 @@ void loop() {
   Serial.print("IR Sensor ");
   Serial.print(" Value = ");
   Serial.print(irData);
-  delay(1000);
+//  delay(1000);
+
+  if (irData <= 200){
+    digitalWrite(buzzPin,HIGH);
+  }
+  else{
+    digitalWrite(buzzPin,LOW);
+  }
 }
